@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Morpheus",
-    "slug": "Morpheus",
+    "name": "expo-setup",
+    "slug": "expo-setup",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.cajaun.react-native-morpheus"
+      "bundleIdentifier": "com.cajaun.react-native-expo-setup"
     },
     "android": {
       "adaptiveIcon": {

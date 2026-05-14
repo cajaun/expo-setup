@@ -1,12 +1,10 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { KeyboardProvider } from "react-native-keyboard-controller";
-import { TrayProvider } from "@/features/action-tray";
+import { ToastProvider } from "@/components/toast";
 import "../global.css";
 
 export default function RootLayout() {
-
   const [loaded] = useFonts({
     "Sf-black": require("../assets/fonts/SF-Pro-Rounded-Black.otf"),
     "Sf-bold": require("../assets/fonts/SF-Pro-Rounded-Bold.otf"),
@@ -21,22 +19,14 @@ export default function RootLayout() {
     return null;
   }
 
-
-
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <KeyboardProvider>
-        <TrayProvider>
-          <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="demos" options={{ headerShown: false }} />
-            <Stack.Screen
-              name="expand-from-trigger"
-              options={{ headerShown: false }}
-            />
-          </Stack>
-        </TrayProvider>
-      </KeyboardProvider>
+      <ToastProvider>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="account" options={{ title: "Account" }} />
+        </Stack>
+      </ToastProvider>
     </GestureHandlerRootView>
   );
 }
