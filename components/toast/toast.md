@@ -1,97 +1,56 @@
-# Toast API Notes
+# Toast Notes
 
-## 1. What This File Is
-
-1. This file is a short API companion for `README.md`.
-2. The full first-principles explanation lives in `README.md`.
-3. This file exists for quick lookup when editing toast calls.
-
-## 2. Public Import
+Use the root barrel:
 
 ```tsx
-import { ToastProvider, useToast, Toast } from "@/components/toast";
+import { ToastProvider, useToast, Toast } from '@/components/toast';
 ```
 
-## 3. Provider Setup
+Provider:
 
 ```tsx
-<ToastProvider
-  toastOptions={{
-    colorScheme: "dark",
-    styles: {
-      title: { fontFamily: "Or-semibold" },
-      description: { fontFamily: "Or-medium" },
-    },
-    variants: {
-      default: {
-        styles: {
-          toast: { backgroundColor: "#202020" },
-        },
-      },
-    },
-  }}
->
+<ToastProvider>
   <App />
 </ToastProvider>
 ```
 
-## 4. Simple Toast
+Simple announcement:
 
 ```tsx
 const { toast } = useToast();
-
-toast.show("Copied");
+toast.show('Copied');
 ```
 
-## 5. Config Toast
+Configured announcement:
 
 ```tsx
 toast.show({
-  label: "Saved",
-  description: "Image saved to your gallery.",
-  variant: "success",
-  placement: "top",
-  duration: 2500,
+  label: 'Upload complete',
+  description: 'The file is available now.',
+  variant: 'success',
 });
 ```
 
-## 6. Variants
-
-1. `default`
-2. `info`
-3. `success`
-4. `warning`
-5. `danger`
-
-## 7. Typography
+Persistent announcement:
 
 ```tsx
 toast.show({
-  label: "Copied",
-  description: "Text copied to clipboard.",
-  labelTextSize: "headline",
-  descriptionTextSize: "caption",
+  label: 'Connection lost',
+  description: 'Retry when the network returns.',
+  variant: 'warning',
+  duration: 'persistent',
 });
 ```
 
-## 8. Icons
-
-```tsx
-toast.show({
-  label: "Saved",
-  variant: "success",
-  iconSize: 18,
-});
-```
-
-## 9. Custom Component
+Custom announcement:
 
 ```tsx
 toast.show({
   component: (props) => (
     <Toast variant="info" {...props}>
-      <Toast.Title>Custom</Toast.Title>
-      <Toast.Description>Custom toast layout.</Toast.Description>
+      <Toast.Title>Custom title</Toast.Title>
+      <Toast.Description>Custom body</Toast.Description>
+      <Toast.Close />
     </Toast>
   ),
 });
