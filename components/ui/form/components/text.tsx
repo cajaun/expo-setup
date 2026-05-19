@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
   textField: {
     color: formColors.text,
     fontSize: 17,
-    lineHeight: 22,
     minHeight: 22,
     paddingVertical: 0,
     textAlignVertical: "center",

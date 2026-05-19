@@ -49,8 +49,10 @@ export function ScrollView({
   return (
     <RNScrollView
       scrollToOverflowEnabled
+      automaticallyAdjustKeyboardInsets
       automaticallyAdjustsScrollIndicatorInsets
       contentInsetAdjustmentBehavior="automatic"
+      keyboardShouldPersistTaps="handled"
       scrollIndicatorInsets={{
         bottom: Platform.OS === "ios" ? bottom : 0,
       }}

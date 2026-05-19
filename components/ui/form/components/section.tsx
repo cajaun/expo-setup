@@ -663,7 +663,6 @@ const styles = StyleSheet.create({
     padding: 0,
     color: formColors.text,
     fontSize: 17,
-    lineHeight: 22,
     minHeight: 22,
     textAlignVertical: "center",
   } satisfies TextStyle,
